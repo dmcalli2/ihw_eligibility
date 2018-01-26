@@ -40,7 +40,9 @@ eligibilityConditions %>%
   count(singleTerm) -> termCount
 
 tagcloud( termCount$singleTerm, termCount$n )
-dev.copy2pdf( file= paste("ihw/plots/general.pdf"), out.type= "cairo" )
+dev.copy2pdf( file= paste("ihw/plots/pdfs/","general",".pdf"), out.type= "cairo" )
+dev.copy(png,"ihw/plots/pics/general.png")
+dev.off()
 
 eligibilityConditions %>% left_join(unifiedCUITerms) -> joinedSet
 
